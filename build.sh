@@ -18,7 +18,7 @@ export BUILD_NUMBER="$(date +%y%m%d)"
 
 initRepos() {
     echo "--> Initializing workspace"
-    repo init -u https://android.googlesource.com/platform/manifest -b android-16.0.0_r2 --git-lfs
+    repo init -u https://android.googlesource.com/platform/manifest -b android-latest-release --git-lfs
     echo
 
     echo "--> Preparing local manifest"
