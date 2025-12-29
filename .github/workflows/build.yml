@@ -1,5 +1,5 @@
 name: Build
-
+name: Install repo tool run: | sudo apt-get update sudo apt-get install -y curl curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin/repo chmod a+x /usr/local/bin/repo
 on:
   workflow_dispatch:
     inputs:
