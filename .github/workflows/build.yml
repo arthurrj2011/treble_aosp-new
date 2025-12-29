@@ -23,8 +23,8 @@ jobs:
           rm -rf ./.??* || true
           ls -la ./
 
-      - name: Setup Environment
-      - run:
+        name: Setup Environment
+        run:
         
           mkdir -p ~/.ssh
           echo "${{ secrets.VENDOR_PONCES_HOST_KEY }}" >> ~/.ssh/known_hosts
