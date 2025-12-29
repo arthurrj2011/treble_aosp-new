@@ -24,8 +24,8 @@ jobs:
           ls -la ./
 
       - name: Setup Environment
-        run: 
-        name: Install repo tool run: sudo apt-get update sudo apt-get install repo
+      - run: apt-get update sudo apt-get install repo
+      - name: Install repo tool run: sudo apt-get update sudo apt-get install repo
         
           mkdir -p ~/.ssh
           echo "${{ secrets.VENDOR_PONCES_HOST_KEY }}" >> ~/.ssh/known_hosts
