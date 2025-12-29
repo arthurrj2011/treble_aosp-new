@@ -1,5 +1,4 @@
 name: Build
-name: Install repo tool run: | sudo apt-get update sudo apt-get install -y curl curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin/repo chmod a+x /usr/local/bin/repo
 on:
   workflow_dispatch:
     inputs:
@@ -26,6 +25,8 @@ jobs:
 
       - name: Setup Environment
         run: |
+        name: Install repo tool run: | sudo apt-get update sudo apt-get install -y curl curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin/repo chmod a+x /usr/local/bin/repo
+        
           mkdir -p ~/.ssh
           echo "${{ secrets.VENDOR_PONCES_HOST_KEY }}" >> ~/.ssh/known_hosts
           chmod 644 ~/.ssh/known_hosts
