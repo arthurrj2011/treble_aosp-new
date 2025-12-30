@@ -19,7 +19,7 @@ rm -rf $GITHUB_WORKSPACE/aosp/.repo/projects/*
 rm -rf $GITHUB_WORKSPACE/aosp/out
 initRepos() {
     echo "--> Initializing workspace"
-    repo init -u https://android.googlesource.com/platform/manifest -b android-latest-release --git-lfs
+    repo init -u https://android.googlesource.com/platform/manifest -b android-latest-release --git-lfs --depth=1
     echo
 
     echo "--> Preparing local manifest"
@@ -28,7 +28,7 @@ initRepos() {
 
 syncRepos() {
     echo "--> Syncing repos"
-    repo sync -j8 --no-clone-bundle --no-tags --depth=1
+    repo sync -j32
     echo
 }
 
