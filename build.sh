@@ -27,7 +27,7 @@ initRepos() {
 
 syncRepos() {
     echo "--> Syncing repos"
-    repo sync -j8
+    repo sync -j16
     echo
 }
 
