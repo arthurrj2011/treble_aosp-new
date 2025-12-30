@@ -15,7 +15,8 @@ sudo apt install repo -y
 [ -z "$OUTPUT_DIR" ] && OUTPUT_DIR="$PWD/output"
 [ -z "$BUILD_ROOT" ] && BUILD_ROOT="$PWD/treble_aosp"
 [ -z "$BUILD_VARIANT" ] && BUILD_VARIANT="$1"
-
+rm -rf $GITHUB_WORKSPACE/aosp/.repo/projects/*
+rm -rf $GITHUB_WORKSPACE/aosp/out
 initRepos() {
     echo "--> Initializing workspace"
     repo init -u https://android.googlesource.com/platform/manifest -b android-latest-release --git-lfs
@@ -27,7 +28,7 @@ initRepos() {
 
 syncRepos() {
     echo "--> Syncing repos"
-    repo sync -j16
+    repo sync -j8 --no-clone-bundle --no-tags --depth=1
     echo
 }
 
