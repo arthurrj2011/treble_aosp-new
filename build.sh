@@ -22,10 +22,7 @@ initRepos() {
     echo
 
     echo "--> Preparing local manifest"
-    mkdir -p .repo/local_manifests
-    cp $BUILD_ROOT/build/default.xml .repo/local_manifests/default.xml
-    cp $BUILD_ROOT/build/remove.xml .repo/local_manifests/remove.xml
-    echo
+    mkdir -p .repo/local_manifest
 }
 
 syncRepos() {
